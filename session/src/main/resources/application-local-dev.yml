@@ -1,0 +1,16 @@
+spring:
+  profiles: local-dev
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sessions
+    username: root
+    password: akash
+
+  jpa:
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  hibernate:
+    ddl-auto: create
+
+server:
+  port: 8081

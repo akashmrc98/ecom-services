@@ -1,0 +1,5 @@
+spring:
+  profiles: local-dev
+
+server:
+  port: 8090
