@@ -1,7 +1,7 @@
 package com.ecom.user.mapper.user;
 
 import com.ecom.user.domain.User;
-import com.ecom.user.dto.request.UserDto;
+import com.ecom.user.dto.UserDto;
 import org.springframework.stereotype.Component;
 
 @Component

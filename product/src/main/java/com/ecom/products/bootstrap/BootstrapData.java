@@ -26,7 +26,8 @@ public class BootstrapData implements CommandLineRunner {
 
 		if(productRepository.count() == 0){
 			String path = new File("").getAbsolutePath();
-			path = path + "/src/main/resources";
+			path = path + "/product/src/main/resources";
+			System.out.println(path);
 
 			Product product1 = new Product();
 			List<String> product1Specs = new ArrayList<>();
@@ -41,6 +42,8 @@ public class BootstrapData implements CommandLineRunner {
 			product1.setPrice(800.00);
 			product1.setModifiedAt(new Date());
 			product1.setStock(10);
+			product1.setRatings(0);
+			product1.setReviews(0);
 			product1.setDescription("Logitech M221 Wireless Mouse, Silent Buttons, 2.4 GHz with " +
 			"USB Mini Receiver, 1000 DPI Optical Tracking, 18-Month Battery Life, Ambidextrous " +
 			"PC/Mac/Laptop - Red");
@@ -96,6 +99,8 @@ public class BootstrapData implements CommandLineRunner {
 			"(Black)");
 			product2.setCreatedAt(new Date());
 			product2.setModifiedAt(new Date());
+			product2.setReviews(0);
+			product2.setRatings(0);
 //		product2.setSpecifications(product2Specs);
 
 			Image image_b1 = new Image();
@@ -145,6 +150,9 @@ public class BootstrapData implements CommandLineRunner {
 			product3.setDescription("SanDisk Ultra Dual 64GB USB 3.0 OTG Pen Drive");
 			product3.setCreatedAt(new Date());
 			product3.setModifiedAt(new Date());
+			product3.setReviews(0);
+			product3.setRatings(0);
+
 //		product3.setSpecifications(product3Specs);
 
 			Image image_c1 = new Image();
@@ -191,6 +199,8 @@ public class BootstrapData implements CommandLineRunner {
 			product4.setPrice(59999.00);
 			product4.setModifiedAt(new Date());
 			product4.setStock(12);
+			product4.setRatings(0);
+			product4.setReviews(0);
 			product4.setDescription("OnePlus 7 Pro, 8GB RAM, Super AMOLED Display," +
 			"256GB Storage, 4000mAH");
 			product4.setCreatedAt(new Date());
@@ -245,6 +255,8 @@ public class BootstrapData implements CommandLineRunner {
 			product5.setDescription("Intel Core i7 9700 Desktop 9th Gen Processor 8 Cores");
 			product5.setCreatedAt(new Date());
 			product5.setModifiedAt(new Date());
+			product5.setReviews(0);
+			product5.setRatings(0);
 //		product5.setSpecifications(product5Specs);
 
 			Image image_e1 = new Image();
@@ -295,6 +307,8 @@ public class BootstrapData implements CommandLineRunner {
 			"FHD Gaming Laptop (i7-9750H/8GB/256GB SSD + 1TB HDD/Windows 10/4GB NVIDIA GTX 1650");
 			product6.setCreatedAt(new Date());
 			product6.setModifiedAt(new Date());
+			product6.setReviews(0);
+			product6.setRatings(0);
 //		product6.setSpecifications(product6Specs);
 
 			Image image_f1 = new Image();

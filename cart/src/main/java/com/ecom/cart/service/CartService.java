@@ -26,13 +26,22 @@ public class CartService {
         logger.info(registerDto.getUserId().toString());
     }
 
+    public void updateProductQuantityInCart(Long userId, Long productId, int quantity) {
+        Cart cart = cartRepository.findByUserId(userId);
+        List<Product> products = cart.getProducts();
+        products.forEach(product -> {
+            if (product.getId().equals(productId))
+                product.setQuantity(quantity);
+        });
+        cart.setProducts(products);
+        cartRepository.save(cart);
+    }
+
     public void addProductToCart(Product product, Long userId) {
         Cart cart = cartRepository.findByUserId(userId);
-
         List<Product> products = cart.getProducts();
         products.add(product);
         cart.setProducts(products);
-
         cartRepository.save(cart);
     }
 
@@ -48,14 +57,14 @@ public class CartService {
         cartRepository.save(cart);
     }
 
-    public void removeAllProductsFromCart(Long userId){
+    public void removeAllProductsFromCart(Long userId) {
         Cart cart = cartRepository.findByUserId(userId);
         List<Product> products = new ArrayList<>();
         cart.setProducts(products);
         cartRepository.save(cart);
     }
 
-    public int getNoOfProductsInCart(Long userId){
+    public int getNoOfProductsInCart(Long userId) {
         return cartRepository.findByUserId(userId).getProducts().size();
     }
 

@@ -1,3 +1,5 @@
 spring:
   profiles:
+    include:
+      - api
     active: local-dev

@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,13 +15,12 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
 
-    @Column(unique = true)
-    private Long userId;
-
     private String headLine;
     private String description;
     private int rating;
     private Date reviewedOn;
     private String username;
-    private int favourites;
+
+    @OneToMany
+    private List<Favourites> favourites;
 }

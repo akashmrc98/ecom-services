@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Address {
     @Id
-    private Long addressId;
+    private Long id;
     private String addressType;
     private String fullName;
     private String firstLine;

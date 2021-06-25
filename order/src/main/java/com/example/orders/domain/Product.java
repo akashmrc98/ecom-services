@@ -11,17 +11,14 @@ import java.util.Date;
 @NoArgsConstructor
 public class Product {
 	@Id
-	private Long productId;
+	private Long id;
 	private String description;
 	private String brand;
-	private String category;
-	private String subCategory;
 	private Double price;
-	private Date manufacturedOn;
-	private String[] specifications;
 
-	private Integer stock;
-
-	@OneToOne
-	private Image image;
+	private Integer quantity;
+	@Lob()
+	@Column(columnDefinition = "MEDIUMBLOB")
+	private byte[] image;
+	private boolean isReviewed;
 }

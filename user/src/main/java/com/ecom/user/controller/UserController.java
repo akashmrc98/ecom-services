@@ -3,9 +3,9 @@ package com.ecom.user.controller;
 import com.ecom.user.client.*;
 import com.ecom.user.domain.Address;
 import com.ecom.user.domain.User;
-import com.ecom.user.dto.request.RegisterDto;
-import com.ecom.user.dto.request.SessionDto;
-import com.ecom.user.dto.request.UserDto;
+import com.ecom.user.dto.RegisterDto;
+import com.ecom.user.dto.SessionDto;
+import com.ecom.user.dto.UserDto;
 import com.ecom.user.mapper.session.SessionMapper;
 import com.ecom.user.service.AddressService;
 import com.ecom.user.service.UserService;
@@ -59,13 +59,19 @@ public class UserController {
         return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
     }
 
-    @PostMapping("/addresses/{userId}")
+    @PostMapping("/{userId}/address")
     public void createAddress(
             @RequestBody Address address,
             @PathVariable("userId") Long userId
     ) {
         Address savedAddress = addressService.createAddress(address);
         userService.saveAddress(savedAddress, userId);
+    }
+
+    @GetMapping("/{userId}/address")
+    public ResponseEntity<Iterable<Address>> getUserAddress(@PathVariable("userId") Long userId) {
+        Iterable<Address> addresses = userService.getUserAddress(userId);
+        return new ResponseEntity<>(userService.getUserAddress(userId),HttpStatus.OK);
     }
 
     @PutMapping("/addresses/{addressId}")

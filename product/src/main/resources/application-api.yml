@@ -1,0 +1,24 @@
+api:
+  product:
+    host: http://localhost:8083/
+    api: api/v1/products/
+
+  session:
+    host: http://localhost:8081/
+    api: api/v1/sessions/
+
+  cart:
+    host: http://localhost:8084/
+    api: api/v1/carts/
+
+  wishlist:
+    host: http://localhost:8085/
+    api: api/v1/wishlists/
+
+  order:
+    host: http://localhost:8086/
+    api: api/v1/orders/
+
+  review:
+    host: http://localhost:8087/
+    api: api/v1/reviews/

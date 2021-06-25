@@ -22,6 +22,9 @@ public class WishlistService {
         wishlistRepository.save(wishlist);
     }
 
+    public Integer getSizeOfProducts(Long userId){
+        return wishlistRepository.findByUserId(userId).getProducts().size();
+    }
 
     public void addProductToWishList(Product product, Long userId) {
         Wishlist wishlist = wishlistRepository.findByUserId(userId);
@@ -38,7 +41,7 @@ public class WishlistService {
     public void removeProductFromWishList(Long userId, Long productId) {
         Wishlist wishlist = wishlistRepository.findByUserId(userId);
         List<Product> products = wishlist.getProducts();
-        products.removeIf(product -> product.getProductId().equals(productId));
+        products.removeIf(product -> product.getId().equals(productId));
         wishlist.setProducts(products);
         wishlistRepository.save(wishlist);
     }

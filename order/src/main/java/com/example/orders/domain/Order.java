@@ -20,8 +20,12 @@ public class Order {
     private Date purchasedAt;
     private Date lastModifiedAt;
     private int[] productsQuantityList;
+    private boolean[] isProductsReviewed;
     private String paymentMethod;
 
-    @Column(unique = true)
-    private Long userId;
+    @OneToOne
+    private Address address;
+
+    @ManyToMany
+    private List<Product> products;
 }

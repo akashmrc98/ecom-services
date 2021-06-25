@@ -1,8 +1,9 @@
 package com.ecom.products.controller;
 
-import com.ecom.products.domain.Product;
 import com.ecom.products.dto.ProductInDetailDto;
 import com.ecom.products.dto.ProductsDto;
+import com.ecom.products.dto.ReviewRatingsDto;
+import com.ecom.products.dto.UpdateStockDto;
 import com.ecom.products.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,11 @@ public class ProductController {
         return new ResponseEntity<>(productService.getProduct(productId), HttpStatus.OK);
     }
 
+    @PostMapping("/update-stock")
+    public void updateStock(@RequestBody UpdateStockDto updateStockDto) {
+        productService.updateStock(updateStockDto);
+    }
+
     @GetMapping("/")
     public ResponseEntity<Iterable<ProductsDto>>
     getProducts(
@@ -35,6 +41,14 @@ public class ProductController {
     ) {
         return new ResponseEntity<Iterable<ProductsDto>>
                 (productService.getProducts(pageNo, pageSize, sortBy), HttpStatus.OK);
+    }
+
+    @PostMapping("/reviews/{productId}")
+    public void updateProductReviewRatings(
+            @RequestBody ReviewRatingsDto reviewRatingsDto,
+            @PathVariable("productId") Long productId
+    ) {
+        productService.updateReviewRatings(reviewRatingsDto, productId);
     }
 
 }

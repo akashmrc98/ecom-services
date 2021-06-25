@@ -1,5 +1,6 @@
 package com.ecom.cart.config;
 
+import com.sun.istack.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -11,13 +12,12 @@ public class CorsConfig {
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
-			public void addCorsMappings(CorsRegistry registry) {
+			public void addCorsMappings(@NotNull CorsRegistry registry) {
 				try {
 					registry.addMapping("/**")
 					.allowedOrigins("*")
-					.allowedMethods("GET", "POST", "PUT", "DELETE")
-					.allowedHeaders("*")
-					.exposedHeaders("*");
+					.allowedMethods("PUT", "DELETE", "GET", "POST", "OPTIONS")
+					.allowedHeaders("*");
 				} catch (NullPointerException npe){
 					npe.printStackTrace();
 				}

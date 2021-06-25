@@ -20,6 +20,8 @@ public class ProductsMapperImpl implements ProductsMapper {
 			productsDto.setDescription(product.getDescription());
 			productsDto.setStock(product.getStock());
 			productsDto.setImage(product.getImages().get(0).getContent());
+			productsDto.setReviews(product.getReviews());
+			productsDto.setRatings(product.getRatings());
 			productsDtoS.add(productsDto);
 		}
 		return productsDtoS;

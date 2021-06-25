@@ -23,6 +23,9 @@ public class Product {
 	private Date createdAt;
 	private Date modifiedAt;
 
+	private double ratings;
+	private int reviews;
+
 	@OneToMany
 	private List<Specification> specifications;
 	private Integer stock;

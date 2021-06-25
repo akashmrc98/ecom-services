@@ -2,6 +2,7 @@ package com.ecom.authentication.service;
 
 import com.ecom.authentication.config.PasswordConfig;
 import com.ecom.authentication.dto.AuthDto;
+import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,8 @@ import com.ecom.authentication.dto.AuthenticationDto;
 import com.ecom.authentication.mapper.session.SessionMapper;
 import com.ecom.authentication.repository.SessionRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -58,15 +61,14 @@ public class SessionService {
         return new JwtResponse(session.getUserId(), session.getUsername(), accessToken, refreshToken);
     }
 
-    public boolean isAuthorizedUser(AuthDto authDto){
+    public Boolean isAuthorizedUser(AuthDto authDto){
+        logger.info(authDto.getAccessToken());
         String auth = authDto.getAccessToken();
         auth = auth.replace("[", "");
         auth = auth.replace("]", "");
-        Session session = sessionRepository.findByCurrentAccessToken(auth);
-        logger.info(session.getUsername());
-        if(session.getCurrentAccessToken().equals(auth))
-            return true;
-        return false;
+        logger.info(auth);
+        Optional<Session> session = sessionRepository.findByCurrentAccessToken(auth);
+        return session.isPresent();
     }
 
 }

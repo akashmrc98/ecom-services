@@ -1,6 +1,7 @@
 package com.ecom.authentication.controller;
 
 import com.ecom.authentication.dto.AuthDto;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import lombok.AllArgsConstructor;
@@ -14,23 +15,20 @@ import com.ecom.authentication.service.SessionService;
 import com.ecom.authentication.mapper.session.SessionMapper;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/sessions")
 public class SessionController {
     private final SessionService sessionService;
     private final SessionMapper sessionMapperImpl;
-    private static final Logger logger = LoggerFactory.getLogger(SessionController.class);
 
     @PostMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void createSessionStoreForUser(@RequestBody SessionDto sessionDto) {
-        logger.info(sessionDto.getUsername());
         sessionService.createSessionService(sessionDto);
     }
 
     @PostMapping("/login")
     public ResponseEntity<JwtResponse> authenticateUser(@RequestBody AuthenticationDto authenticationDto) {
-        logger.info(authenticationDto.getUsername());
         return new ResponseEntity<JwtResponse>(sessionService.authenticateUser(authenticationDto), HttpStatus.OK);
     }
 

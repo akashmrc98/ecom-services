@@ -18,6 +18,7 @@ public class Product {
 	private Double price;
 	private String[] specifications;
 	private Integer stock;
+	private Integer quantity;
 	@Lob()
 	@Column(columnDefinition = "MEDIUMBLOB")
 	private byte[] image;

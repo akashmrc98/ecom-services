@@ -1,0 +1,4 @@
+api:
+  product:
+    host: http://localhost:8083/
+    api: api/v1/products/

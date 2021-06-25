@@ -3,7 +3,7 @@ package com.ecom.user.client;
 
 import com.ecom.user.config.RestTemplateConfig;
 import com.ecom.user.api.WishListConfig;
-import com.ecom.user.dto.request.RegisterDto;
+import com.ecom.user.dto.RegisterDto;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

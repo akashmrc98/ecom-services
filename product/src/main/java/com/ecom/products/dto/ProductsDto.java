@@ -12,4 +12,6 @@ public class ProductsDto  {
 	private Double price;
 	private Integer stock;
 	private byte[] image;
+	private double ratings;
+	private int reviews;
 }

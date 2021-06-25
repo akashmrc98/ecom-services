@@ -2,7 +2,7 @@ package com.ecom.user.client;
 
 import com.ecom.user.config.RestTemplateConfig;
 import com.ecom.user.api.SessionConfig;
-import com.ecom.user.dto.request.SessionDto;
+import com.ecom.user.dto.SessionDto;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
