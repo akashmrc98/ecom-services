@@ -11,14 +11,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>cart</module>
         <module>gateway</module>
-        <module>order</module>
-        <module>product</module>
-        <module>review</module>
-        <module>session</module>
-        <module>user</module>
-        <module>wishlist</module>
+        <module>apis</module>
+        <module>services</module>
     </modules>
 
     <properties>
