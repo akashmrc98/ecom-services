@@ -7,46 +7,45 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="product" />
-        <module name="apis" />
-        <module name="review" />
-        <module name="session" />
-        <module name="wishlist" />
-        <module name="services" />
-        <module name="user" />
+        <module name="users-services" />
+        <module name="sessions" />
+        <module name="carts" />
+        <module name="reviews" />
+        <module name="orders" />
+        <module name="wishlists" />
+        <module name="users" />
         <module name="gateway" />
-        <module name="cart" />
-        <module name="order" />
+        <module name="user-registry" />
+        <module name="products" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="carts-api" target="11" />
-      <module name="orders-api" target="11" />
-      <module name="products-api" target="11" />
-      <module name="reviews-api" target="11" />
+      <module name="messaging" target="15" />
+      <module name="order-service" target="15" />
+      <module name="payment-service" target="15" />
+      <module name="session" target="11" />
       <module name="session-service" target="11" />
       <module name="untitled" target="15" />
-      <module name="users-api" target="11" />
-      <module name="wishlists-api" target="11" />
+      <module name="user" target="15" />
+      <module name="users-service" target="11" />
+      <module name="users-service (1)" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="cart" options="-parameters" />
-      <module name="carts-api" options="-parameters" />
+      <module name="carts" options="-parameters" />
+      <module name="ecom-services" options="-parameters" />
       <module name="gateway" options="-parameters" />
-      <module name="order" options="-parameters" />
-      <module name="orders-api" options="-parameters" />
-      <module name="product" options="-parameters" />
-      <module name="products-api" options="-parameters" />
-      <module name="review" options="-parameters" />
-      <module name="reviews-api" options="-parameters" />
-      <module name="session" options="-parameters" />
+      <module name="orders" options="-parameters" />
+      <module name="products" options="-parameters" />
+      <module name="reviews" options="-parameters" />
       <module name="session-service" options="-parameters" />
-      <module name="user" options="-parameters" />
-      <module name="users-api" options="-parameters" />
-      <module name="wishlist" options="-parameters" />
-      <module name="wishlists-api" options="-parameters" />
+      <module name="sessions" options="-parameters" />
+      <module name="user-registry" options="-parameters" />
+      <module name="users" options="-parameters" />
+      <module name="users-service" options="-parameters" />
+      <module name="users-services" options="-parameters" />
+      <module name="wishlists" options="-parameters" />
     </option>
   </component>
 </project>

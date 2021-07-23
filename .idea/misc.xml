@@ -5,10 +5,17 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/messaging/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/api/session/pom.xml" />
+        <option value="$PROJECT_DIR$/api/sessions/users-service/pom.xml" />
+        <option value="$PROJECT_DIR$/soa/sessions/pom.xml" />
+        <option value="$PROJECT_DIR$/soa/user/pom.xml" />
+        <option value="$PROJECT_DIR$/soa/users-service/pom.xml" />
+        <option value="$PROJECT_DIR$/soa/users-services/pom.xml" />
         <option value="$PROJECT_DIR$/untitled/pom.xml" />
       </set>
     </option>

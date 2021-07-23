@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/apis/carts-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/apis/orders-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/apis/products-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/apis/reviews-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/apis/users-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/apis/wishlists-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/carts/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/orders/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/products/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/reviews/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/sessions/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/users/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/wishlists/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/services/session-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/soa/user-registry/src/main/java" charset="UTF-8" />
   </component>
 </project>
